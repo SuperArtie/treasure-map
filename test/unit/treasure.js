@@ -4,12 +4,12 @@
 'use strict';
 
 var expect    = require('chai').expect,
-    Person    = require('../../app/models/person'),
+    Treasure  = require('../../app/models/treasure'),
     dbConnect = require('../../app/lib/mongodb'),
     cp        = require('child_process'),
-    db        = 'template-test';
+    db        = 'treasure-map-test';
 
-describe('Person', function(){
+describe('Treasure', function(){
   before(function(done){
     dbConnect(db, function(){
       done();
@@ -23,16 +23,16 @@ describe('Person', function(){
   });
 
   describe('constructor', function(){
-    it('should create a new Person object', function(){
-      var p = new Person();
-      expect(p).to.be.instanceof(Person);
+    it('should create a new Treasure object', function(){
+      var t = new Treasure('diamond', ['it\'s around the waterfall', 'it\'s not a diamond', 'i love you'], ['indiana jones', 'blood moon', 'gold rock'], '1', '2', {name:'brazil', lat:'2', lng:'3'}, ['0.jpg', '1.png', '2.gif']);
+      expect(t).to.be.instanceof(Treasure);
     });
   });
 
   describe('.all', function(){
-    it('should get all people', function(done){
-      Person.all(function(err, people){
-        expect(people).to.have.length(2);
+    it('should get all treasure', function(done){
+      Treasure.all(function(err, treasure){
+        expect(treasure).to.have.length(3);
         done();
       });
     });

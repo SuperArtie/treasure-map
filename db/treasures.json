@@ -1,0 +1,33 @@
+{
+  "_id":{"$oid":"000000000000000000000001"},
+  "name":"jade monkey",
+  "hints":["before noon", "cellar door", "mansfield bar"],
+  "tags":["blue moon", "nighttime", "kizza me"],
+  "order":1,
+  "diff":2,
+  "loc":{"name":"bummer", "lat":12, "lng":14},
+  "photos":["file1.gif", "file2.jpg", "file3.png"],
+  "isFound":true
+}
+{
+  "_id":{"$oid":"000000000000000000000002"},
+  "name":"chocolate",
+  "hints":["dark chocolate", "cadbury egg", "parallel parking"],
+  "tags":["willy wonka", "oompa-loompa", "snozzberry"],
+  "order":3,
+  "diff":1,
+  "loc":{"name":"french indo-china", "lat":15, "lng":11},
+  "photos":["photo.gif", "photo2.jpg", "photo3.png"],
+  "isFound":false
+}
+{
+  "_id":{"$oid":"000000000000000000000003"},
+  "name":"the milky way",
+  "hints":["watch neil degrasse tyson's cosmos on fox every tuesday night!!!", "cadbury dog", "crossfire"],
+  "tags":["devil's dungeon", "klondike cave", "gobstopper"],
+  "order":2,
+  "diff":3,
+  "loc":{"name":"french indo-china", "lat":15, "lng":11},
+  "photos":["pic.gif", "pic.jpg", "pic.png"],
+  "isFound":false
+}
