@@ -1,7 +1,9 @@
 ## name of project
 ### Code Badges
 build status icon
+[![Build Status](https://travis-ci.org/SuperArtie/treasure-map.svg?branch=master)](https://travis-ci.org/SuperArtie/treasure-map)
 coverage status icon
+[![Coverage Status](https://coveralls.io/repos/SuperArtie/treasure-map/badge.png)](https://coveralls.io/r/SuperArtie/treasure-map)
 
 ### About
 write a description about your project

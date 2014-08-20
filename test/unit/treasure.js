@@ -29,6 +29,15 @@ describe('Treasure', function(){
     });
   });
 
+  describe('.findById', function(){
+    it('should find treasure by _id', function(done){
+      Treasure.findById('000000000000000000000001', function(err, treasure){
+        expect(treasure.hints.length).to.equal(3);
+        done();
+      });
+    });
+  });
+
   describe('.all', function(){
     it('should get all treasure', function(done){
       Treasure.all(function(err, treasure){
