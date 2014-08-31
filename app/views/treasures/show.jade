@@ -1,0 +1,25 @@
+extends ../shared/template
+block content
+  .row
+    .col-xs-1
+    .col-xs-5
+      #map2
+    .col-xs-1
+    .col-xs-4
+      h2 Photos
+      each photo in treasure.photos
+        img(src='#{photo}')
+  .row
+    h2#id(data-treasure-id=treasure._id data-name=treasure.loc.name data-lat=treasure.loc.lat data-lng=treasure.loc.lng)= treasure.name
+    .col-xs-1
+    .col-xs-5
+      h3 Hints
+      ul
+        each hint in treasure.hints
+          li= hint
+    .col-xs-1
+    .col-xs-4
+      form(method='post' action='/treasures/#{treasure._id}')
+        button.found(type='submit') Found it!
+block scripts
+    script(src='/js/user/show.js')

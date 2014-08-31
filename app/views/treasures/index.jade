@@ -1,0 +1,25 @@
+extends ../shared/template
+block content
+  h2 treasures
+  #map
+  .row
+    .col-xs-9
+      table.table.table-striped.table-hover
+        thead
+          th!= helper.sort(query, 'name', 'Name')
+          th Location
+          th Difficulty
+          th Tags
+          th!= helper.sort(query, 'order', 'Order')
+          th Found?
+        tbody
+          each treasure in treasures
+            tr(data-name=treasure.loc.name, data-lat=treasure.loc.lat, data-lng=treasure.loc.lng)
+             td: a(href='treasures/#{treasure._id}')= treasure.name
+             td= treasure.loc.name
+             td= treasure.diff
+             td!= helper.tags(query, treasure.tags)
+             td= treasure.order
+             td= treasure.isFound
+block scripts
+  script(src='/js/user/index.js')

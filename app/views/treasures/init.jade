@@ -1,0 +1,34 @@
+extends ../shared/template
+block content
+  h2 New Treasure
+  form(role='form' method='post' action='/treasures' enctype='multipart/form-data')
+    .form-group
+      label Name
+      input(name='name' type='text')
+    .form-group
+      label Location
+      input#loc(name='loc' type='text')
+      input#lat(name='loc' type='hidden')
+      input#lng(name='loc' type='hidden')
+    .form-group#hints
+      label Hints
+      input#hint(name='hints' type='text')
+      button#hButton(type='button') Add Hint
+    .form-group
+      label Photos
+      input#photos(name='photos' type='file' multiple=true)
+    .form-group
+      label Difficulty
+      select#diff(name='diff')
+        option(value='1') easy
+        option(value='2') medium
+        option(value='3') hard
+    .form-group
+      label Tags
+      input#tags(name='tags' type='text')
+    .form-group
+      label Order
+      input#order(name='order' type='number')
+      button(type='submit') Add 
+block scripts
+  script(src='/js/user/init.js')

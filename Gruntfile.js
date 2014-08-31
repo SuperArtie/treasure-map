@@ -16,13 +16,13 @@ module.exports = function(grunt){
       all: ['Gruntfile.js', 'app/**/*.js', 'test/**/*.js', '!app/static/js/vendor/**/*.js', '!app/static/bootstrap/**/*.js']
     },
     // ---------------------------------------------------------------------- //
-    jscs: {
+    /*jscs: {
       src: '<%= jshint.all %>',
       options: {
         config: '.jscsrc',
         reporter: 'console'
       }
-    }
+    }*/
     // ---------------------------------------------------------------------- //
   });
 

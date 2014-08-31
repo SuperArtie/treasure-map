@@ -24,8 +24,10 @@ describe('Treasure', function(){
 
   describe('constructor', function(){
     it('should create a new Treasure object', function(){
-      var t = new Treasure('diamond', ['it\'s around the waterfall', 'it\'s not a diamond', 'i love you'], ['indiana jones', 'blood moon', 'gold rock'], '1', '2', {name:'brazil', lat:'2', lng:'3'}, ['0.jpg', '1.png', '2.gif']);
+      var o = {name:['diamond'], hints:['it\'s around the waterfall', 'it\'s not a diamond', 'i love you'], tags:['indiana jones, blood moon, gold rock'], order:['1'], diff:['2'], loc:['brazil', '2', '3'], photos:['0.jpg', '1.png', '2.gif']};
+      var t = new Treasure(o);
       expect(t).to.be.instanceof(Treasure);
+      expect(t.hints.length).to.equal(3);
     });
   });
 
@@ -33,6 +35,7 @@ describe('Treasure', function(){
     it('should find treasure by _id', function(done){
       Treasure.findById('000000000000000000000001', function(err, treasure){
         expect(treasure.hints.length).to.equal(3);
+        console.log(treasure);
         done();
       });
     });
@@ -40,8 +43,17 @@ describe('Treasure', function(){
 
   describe('.all', function(){
     it('should get all treasure', function(done){
-      Treasure.all(function(err, treasure){
-        expect(treasure).to.have.length(3);
+      Treasure.all(function(err, treasures){
+        expect(treasures).to.have.length(3);
+        done();
+      });
+    });
+  });
+
+  describe('.found', function(){
+    it('should find treasure', function(done){
+      Treasure.found('000000000000000000000003', function(err, treasure){
+        expect(treasure.isFound).to.equal.true;
         done();
       });
     });
